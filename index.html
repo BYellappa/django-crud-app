@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<h1>well come to employee list</h1>
+<table border="4" width="100%">
+    <thead>
+        <th>Employee number</th>
+        <th>Employee name</th>
+        <th>Employee salary</th>
+        <th>Employee addres</th>
+        <th>insert & delete</th>
+        
+    </thead>
+    
+    {% for em in emp %}
+    <tr>
+        <td>{{em.eno}}</td>
+        <td>{{em.ename}}</td>
+        <td>{{em.esal}}</td>
+        <td>{{em.eaddr}}</td>
+        <td><a href="/update/{{em.id}}">update</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/delete/{{em.id}}">delete</a></td>
+       
+    </tr>
+    
+    {% endfor %}
+</table>
+<br><br>
+<a class="btn btn-success btn-lg" href="/insert">insert new employee</a>
+
+{% endblock %}
+</body>
+</html>
